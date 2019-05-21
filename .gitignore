@@ -1,0 +1,17 @@
+sds_trace_data.dat
+
+boards/ZCU111/dsp_pynq/
+boards/ZCU111/bitstreams/
+
+boards/ZCU111/notebooks/assets/hpf.wav
+boards/ZCU111/notebooks/assets/hpf_hw.wav
+boards/ZCU111/notebooks/assets/hpf_coeffs.npy
+
+.Xil
+vivado.jou
+vivado.log
+
+*.log
+
+*.idea
+*.ipynb_checkpoints
