@@ -3,8 +3,14 @@ all: wheel
 wheel:
 	python3 setup.py bdist_wheel
 
-bitstream:
+zcu111:
 	cd boards/ZCU111 && $(MAKE)
+	
+ultra96:
+	cd boards/Ultra96 && $(MAKE)
 
-clean_bistream:
+clean_zcu111:
 	cd boards/ZCU111 && $(MAKE) clean
+	
+clean_ultra96:
+	cd boards/Ultra96 && $(MAKE) clean
