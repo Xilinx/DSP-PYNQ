@@ -1,10 +1,5 @@
 set proj_name "dsp_pynq"
 
-# --- temp line --- #
-set boards_path "/group/xlabs-co/jgoldsmi/projects/dsp_u96/bdf/ultra96v2/"
-set_param board.repoPaths ${boards_path}
-# ----------------- #
-
 create_project ${proj_name} ./${proj_name} -part xczu3eg-sbva484-1-e
 set_property BOARD_PART em.avnet.com:ultra96v2:part0:1.0 [current_project]
 set_property target_language VHDL [current_project]
