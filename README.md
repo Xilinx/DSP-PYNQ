@@ -6,6 +6,8 @@ This repo supports the following boards:
    - ZCU111
    - Ultra96 v1
    - Ultra96 v2
+   
+> The Ultra96 version of the design only supports Jupyter Notebooks.
 
 ## Getting started
 All the material in this repo is available on the v2.4.1 PYNQ image for the ZCU111 - as part of the [PYNQ RFSoC Workshop](https://github.com/Xilinx/PYNQ_RFSOC_Workshop). This is not the case for the Ultra96, meaning this repo has to be installed separately if using that board.
@@ -20,7 +22,7 @@ We supply a pre-built wheel containing the bitstream for that tagged release. Th
 # pip3 install https://github.com/Xilinx/DSP-PYNQ/releases/download/v1.0_$BOARD/dsp_pynq-1.0-py3-none-any.whl
 # python3 -c 'import dsp_pynq; dsp_pynq.install_notebooks()'
 ```
-The notebooks should then be available from the JupyterLab file browser inside the `dsp_pynq` directory.
+The notebooks should then be available from the Jupyter file browser inside the `dsp_pynq` directory.
 
 ## Building the wheel
 > NOTE: This must be built on an x86 Linux PC, with Vivado and Python 3 installed and available on $PATH. This cannot be built on the board.
