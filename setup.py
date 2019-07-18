@@ -38,7 +38,6 @@ from setuptools import find_packages, setup
 # global variables
 board = os.environ['BOARD']
 repo_board_folder = f'boards/{board}/'
-hw_data_files = []
 
 
 def check_env():
@@ -52,17 +51,19 @@ def copy_board_files(subdir):
     src_dir = os.path.join(repo_board_folder, subdir) 
     dst_dir = os.path.join('dsp_pynq', subdir)
     copy_tree(src_dir, dst_dir)
-    for new_file_dir, _, new_files in os.walk(dst_dir):
-        hw_data_files.extend(
+
+def make_file_list():
+    data_files = []
+    for new_file_dir, _, new_files in os.walk("dsp_pynq"):
+        data_files.extend(
             [os.path.join("..", new_file_dir, f) for f in new_files]
         )
-
+    return data_files
 
 check_env()
 make_command = ["make", "-C", repo_board_folder]
 if subprocess.call(make_command) != 0:
     sys.exit(-1)
-copy_board_files('notebooks')
 copy_board_files('bitstreams')
 
 
@@ -79,5 +80,5 @@ setup(
     author="Craig Ramsay, Josh Goldsmith",
     author_email="cramsay@xilinx.com, jgoldsmi@xilinx.com",
     packages=find_packages(),
-    package_data={'': hw_data_files},
+    package_data={'': make_file_list()},
     description="Tutorial on using Python and PYNQ for DSP applications")
