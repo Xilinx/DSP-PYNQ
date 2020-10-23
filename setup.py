@@ -69,11 +69,12 @@ copy_board_files('bitstreams')
 
 setup(
     name="dsp_pynq",
-    version='1.0',
+    version='2.0',
     install_requires=[
         'pynq>=2.4',
         'plotly>=3.8.1',
         'plotly-express>=0.1.7',
+        'scipy>=1.2.0',
     ],
     url='https://github.com/Xilinx/DSP-PYNQ',
     license='BSD 3-Clause License',
