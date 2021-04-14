@@ -5,6 +5,8 @@
 # Though there are limitations about the generated script,
 # the main purpose of this utility is to make learning
 # IP Integrator Tcl commands easier.
+# Copyright (C) 2021 Xilinx, Inc
+# SPDX-License-Identifier: BSD-3-Clause
 ################################################################
 
 namespace eval _tcl {

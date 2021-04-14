@@ -1,4 +1,5 @@
-set origin_dir "."
+# Copyright (C) 2021 Xilinx, Inc
+# SPDX-License-Identifier: BSD-3-Clause
 set proj_name "dsp_pynq"
 
 create_project ${proj_name} ./${proj_name} -part xczu28dr-ffvg1517-2-e
