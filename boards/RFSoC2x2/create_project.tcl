@@ -3,7 +3,8 @@
 set proj_name "dsp_pynq"
 
 create_project ${proj_name} ./${proj_name} -part xczu28dr-ffvg1517-2-e
-set_property board_part xilinx.com:zcu111:part0:1.1 [current_project]
+set_property board_part_repo_paths [file normalize "~/.Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store"] [current_project]
+set_property board_part xilinx.com:rfsoc2x2:part0:1.1 [current_project]
 set_property target_language VHDL [current_project]
 
 source ./block_design.tcl

@@ -1,18 +1,19 @@
 # DSP-PYNQ
-These notebooks act as a tutorial on how to develop a DSP application using Python and PYNQ. The first notebook is a primer on both DSP and Python packages centered around DSP functionality.  The second notebook takes the knowledge learned from the first and uses it to perform similar functions, but using hardware IP on the programmable logic.
+These notebooks act as a tutorial on how to develop a DSP application using Python and PYNQ. The first notebook is a primer on both DSP and Python packages centered around DSP functionality. The second notebook takes the knowledge learned from the first and uses it to perform similar functions, but using hardware IP on the programmable logic.
 
 # Support
 This repo supports the following boards:
    - ZCU111
    - Ultra96 v1
    - Ultra96 v2
+   - RFSoC2x2
    
 > The Ultra96 version of the design only supports Jupyter Notebooks.
 
 ## Getting started
-All the material in this repo is available on several PYNQ verions for the ZCU111 - and is included in the [PYNQ RFSoC Workshop](https://github.com/Xilinx/PYNQ_RFSOC_Workshop). This is not the case for the Ultra96, meaning this repo has to be installed separately if using that board.
+All the material in this repo is available on several PYNQ verions for the ZCU111 - and is included in the [PYNQ RFSoC Workshop](https://github.com/Xilinx/PYNQ_RFSOC_Workshop). This is not the case for the Ultra96 and RFSoC2x2, meaning this repo has to be installed separately if using either of those boards.
 
-The SD card images for both boards can be downloaded from the [PYNQ website](http://www.pynq.io/board.html) and burned to a micro SD card with at least 8GB capacity.
+The SD card images for all boards can be downloaded from the [PYNQ website](http://www.pynq.io/board.html) and burned to a micro SD card with at least 8GB capacity.
 
 To install this repo separately, follow the instructions below.
 
@@ -38,8 +39,10 @@ $ git clone https://github.com/Xilinx/DSP-PYNQ
 $ cd DSP-PYNQ
 # to build for ZCU111
 $ BOARD=ZCU111 make wheel
-# to build build for Ultra96
+# to build for Ultra96
 $ BOARD=Ultra96 make wheel
+# to build for RFSoC2x2
+$ BOARD=RFSoC2x2 make wheel
 ```
 
 To build only the Vivado project you can run the following command.
@@ -48,4 +51,6 @@ To build only the Vivado project you can run the following command.
 $ make zcu111
 # to build for Ultra96
 $ make ultra96
+# to build for RFSoC2x2
+$ make rfsoc2x2
 ```

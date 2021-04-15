@@ -6,6 +6,9 @@ boards/ZCU111/bitstreams/
 boards/Ultra96/dsp_pynq/
 boards/Ultra96/bitstreams/
 
+boards/RFSoC2x2/dsp_pynq/
+boards/RFSoC2x2/bitstreams/
+
 boards/ZCU111/notebooks/assets/hpf.wav
 boards/ZCU111/notebooks/assets/hpf_hw.wav
 boards/ZCU111/notebooks/assets/hpf_coeffs.npy

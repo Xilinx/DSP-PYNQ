@@ -1,3 +1,5 @@
+# Copyright (C) 2021 Xilinx, Inc
+# SPDX-License-Identifier: BSD-3-Clause
 all: wheel
 
 wheel:
@@ -9,8 +11,14 @@ zcu111:
 ultra96:
 	cd boards/Ultra96 && $(MAKE)
 
+rfsoc2x2:
+	cd boards/RFSoC2x2 && $(MAKE)
+
 clean_zcu111:
 	cd boards/ZCU111 && $(MAKE) clean
 	
 clean_ultra96:
 	cd boards/Ultra96 && $(MAKE) clean
+
+clean_rfsoc2x2:
+	cd boards/RFSoC2x2 && $(MAKE) clean
