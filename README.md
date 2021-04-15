@@ -39,8 +39,10 @@ $ git clone https://github.com/Xilinx/DSP-PYNQ
 $ cd DSP-PYNQ
 # to build for ZCU111
 $ BOARD=ZCU111 make wheel
-# to build build for Ultra96
+# to build for Ultra96
 $ BOARD=Ultra96 make wheel
+# to build for RFSoC2x2
+$ BOARD=RFSoC2x2 make wheel
 ```
 
 To build only the Vivado project you can run the following command.
