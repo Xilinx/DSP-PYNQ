@@ -69,17 +69,15 @@ copy_board_files('bitstreams')
 
 setup(
     name="dsp_pynq",
-    version='2.0',
+    version='3.0',
     install_requires=[
-        'pynq>=2.4',
+        'pynq>=2.7',
         'plotly>=3.8.1',
         'plotly-express>=0.1.7',
         'scipy>=1.2.0',
     ],
     url='https://github.com/Xilinx/DSP-PYNQ',
     license='BSD 3-Clause License',
-    author="Craig Ramsay, Josh Goldsmith",
-    author_email="cramsay@xilinx.com, jgoldsmi@xilinx.com",
     packages=find_packages(),
     package_data={'': make_file_list()},
     description="Tutorial on using Python and PYNQ for DSP applications")
