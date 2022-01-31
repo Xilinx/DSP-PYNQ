@@ -19,13 +19,22 @@ To install this repo separately, follow the instructions below.
 
 ### Overlay installation
 We supply a pre-built wheel containing the bitstream for that tagged release. This can be installed directly with Pip using the Terminal built in to JupyterLab.
-```sh
-# PYNQ v2.4.1 v2.5
-pip3 install https://github.com/Xilinx/DSP-PYNQ/releases/download/v1.0_$BOARD/dsp_pynq-1.0-py3-none-any.whl
+
+```bash
+# PYNQ v2.7
+wget https://github.com/Xilinx/DSP-PYNQ/releases/download/v3.0/$BOARD.dsp_pynq-3.0-py3-none-any.whl -O dsp_pynq-3.0-py3-none-any.whl
+python -m pip install dsp_pynq-3.0-py3-none-any.whl --no-deps --no-build-isolation
+rm dsp_pynq-3.0-py3-none-any.whl
 
 # PYNQ v2.6
 pip3 install https://github.com/Xilinx/DSP-PYNQ/releases/download/v2.0_$BOARD/dsp_pynq-2.0-py3-none-any.whl
 
+# PYNQ v2.4.1 v2.5
+pip3 install https://github.com/Xilinx/DSP-PYNQ/releases/download/v1.0_$BOARD/dsp_pynq-1.0-py3-none-any.whl
+```
+
+```bash
+# Install Notebooks
 python3 -c 'import dsp_pynq; dsp_pynq.install_notebooks()'
 ```
 The notebooks should then be available from the Jupyter file browser inside the `dsp_pynq` directory.
