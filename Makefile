@@ -1,24 +1,18 @@
 # Copyright (C) 2021 Xilinx, Inc
 # SPDX-License-Identifier: BSD-3-Clause
-all: wheel
-
-wheel:
-	python3 setup.py bdist_wheel
-
-zcu111:
-	cd boards/ZCU111 && $(MAKE)
-	
-ultra96:
-	cd boards/Ultra96 && $(MAKE)
+all: rfsoc2x2 zcu111 rfsoc4x2 ultra96 tarball
 
 rfsoc2x2:
-	cd boards/RFSoC2x2 && $(MAKE)
+	$(MAKE) -C boards/RFSoC2x2/
 
-clean_zcu111:
-	cd boards/ZCU111 && $(MAKE) clean
+zcu111:
+	$(MAKE) -C boards/ZCU111/
+
+rfsoc4x2:
+	$(MAKE) -C boards/RFSoC4x2/
+
+ultra96:
+	$(MAKE) -C boards/Ultra96/
 	
-clean_ultra96:
-	cd boards/Ultra96 && $(MAKE) clean
-
-clean_rfsoc2x2:
-	cd boards/RFSoC2x2 && $(MAKE) clean
+tarball:
+	tar -czvf dsp_pynq.tar.gz .

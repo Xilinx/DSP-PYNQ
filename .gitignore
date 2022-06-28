@@ -9,9 +9,20 @@ boards/Ultra96/bitstreams/
 boards/RFSoC2x2/dsp_pynq/
 boards/RFSoC2x2/bitstreams/
 
+boards/RFSoC4x2/dsp_pynq/
+boards/RFSoC4x2/bitstreams/
+
 boards/ZCU111/notebooks/assets/hpf.wav
 boards/ZCU111/notebooks/assets/hpf_hw.wav
 boards/ZCU111/notebooks/assets/hpf_coeffs.npy
+
+boards/RFSoC2x2/notebooks/assets/hpf.wav
+boards/RFSoC2x2/notebooks/assets/hpf_hw.wav
+boards/RFSoC2x2/notebooks/assets/hpf_coeffs.npy
+
+boards/RFSoC4x2/notebooks/assets/hpf.wav
+boards/RFSoC4x2/notebooks/assets/hpf_hw.wav
+boards/RFSoC4x2/notebooks/assets/hpf_coeffs.npy
 
 .Xil
 vivado.jou

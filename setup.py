@@ -38,6 +38,9 @@ from setuptools import find_packages, setup
 # global variables
 board = os.environ['BOARD']
 repo_board_folder = f'boards/{board}/'
+hw_data_files = []
+board_notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
+board_project_dir = os.path.join(board_notebooks_dir, 'dsp_pynq')
 
 
 def check_env():
@@ -46,38 +49,41 @@ def check_env():
         raise ValueError("Board {} is not supported.".format(board))
 
 
-def copy_board_files(subdir):
-    """Copy files from board directory to package""" 
+def copy_bitstream(subdir):
+    """Copy files from board directory to Jupyter""" 
     src_dir = os.path.join(repo_board_folder, subdir) 
-    dst_dir = os.path.join('dsp_pynq', subdir)
+    dst_dir = os.path.join(board_project_dir, 'assets')
     copy_tree(src_dir, dst_dir)
-
-def make_file_list():
-    data_files = []
-    for new_file_dir, _, new_files in os.walk("dsp_pynq"):
-        data_files.extend(
+    for new_file_dir, _, new_files in os.walk(dst_dir):
+        hw_data_files.extend(
             [os.path.join("..", new_file_dir, f) for f in new_files]
         )
-    return data_files
+
+
+def copy_notebooks(dir):
+    """Copy notebooks from board directory to Jupyter"""
+    src_dir = os.path.join(dir)
+    dst_dir = os.path.join(board_project_dir)
+    copy_tree(src_dir, dst_dir)
+    for new_file_dir, _, new_files in os.walk(dst_dir):
+        hw_data_files.extend(
+            [os.path.join("..", new_file_dir, f) for f in new_files]
+        )
+
 
 check_env()
-make_command = ["make", "-C", repo_board_folder]
-if subprocess.call(make_command) != 0:
-    sys.exit(-1)
-copy_board_files('bitstreams')
+copy_notebooks('dsp_pynq/notebooks')
+copy_bitstream('bitstreams')
 
 
 setup(
     name="dsp_pynq",
-    version='3.0',
+    version='3.1',
     install_requires=[
         'pynq>=2.7',
-        'plotly>=3.8.1',
-        'plotly-express>=0.1.7',
-        'scipy>=1.2.0',
     ],
     url='https://github.com/Xilinx/DSP-PYNQ',
     license='BSD 3-Clause License',
     packages=find_packages(),
-    package_data={'': make_file_list()},
+    package_data={'': hw_data_files},
     description="Tutorial on using Python and PYNQ for DSP applications")
