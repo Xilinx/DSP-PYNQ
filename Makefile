@@ -15,4 +15,5 @@ ultra96:
 	$(MAKE) -C boards/Ultra96/
 	
 tarball:
-	tar -czvf dsp_pynq.tar.gz .
+	touch dsp_pynq.tar.gz
+	tar --exclude='.[^/]*' --exclude="dsp_pynq.tar.gz" -czvf dsp_pynq.tar.gz .

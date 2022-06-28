@@ -41,7 +41,7 @@ make
 This will result in a tarball at the top directory named `dsp_pynq.tar.gz`. Copy this onto your board and run the following command to install:
 
 ```sh
-pip install -I <path-to-tarball>
+pip install <path-to-tarball>
 ```
 
 ## License
